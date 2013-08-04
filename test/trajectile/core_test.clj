@@ -2,6 +2,13 @@
   (:require [clojure.test :refer :all]
             [trajectile.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(defn sleep-and-return [time]
+  (trace :begin)
+  (Thread/sleep 100)
+  (trace :end))
+
+(deftest trace-sleep
+  (testing "We see accurate numbers for sleeps"
+    (is (= true
+           (let [time-returned (sleep-and-return 100)]
+             (and (> time-returned 99) (< time-returned 115)))))))

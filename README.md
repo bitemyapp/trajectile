@@ -4,6 +4,12 @@ Clojure tracing library, lets you detect hotspots without necessarily having to 
 
 ## Usage
 
+In your project.clj:
+
+    [trajectile "0.0.2"]
+
+Example code:
+
     (defn sleep-twice-and-return [time]
       (trace :begin)
       (Thread/sleep time)

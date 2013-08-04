@@ -1,6 +1,6 @@
 # trajectile
 
-Clojure tracing library, lets you detect hotspots without necessarily having to fire up a profiler.
+Clojure tracing library, lets you detect hotspots without necessarily having to fire up a profiler. It's named Trajectile because we're Clojurians and goddammit look at how erudite we all are.
 
 ## Usage
 

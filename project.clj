@@ -1,4 +1,4 @@
-(defproject trajectile "0.0.1"
+(defproject trajectile "0.0.2"
   :description "Performance tracing and logging library"
   :url "http://github.com/bitemyapp/trajectile"
   :license {:name "Eclipse Public License"

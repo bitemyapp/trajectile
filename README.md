@@ -26,6 +26,10 @@ Telling you (in order) that:
   * It's been 201 milliseconds since :begin
   * The new (current) trace keyword is :end
 
+I wrote this because I'm fucking lazy, not because I'm smart.
+
+Should remind you of [Ruby's tracer_bullets](https://github.com/n8/tracer_bullets) and [Python's rubber_bullets](https://github.com/bclune/rubber_bullets) somewhat.
+
 ## Performance notes
 
 It's good but not LMAX disruptor good. JVM warm-up can affect the timings so don't do anything silly. Using something like Hugo Duncan's criterium before tracing wouldn't be the worst idea.

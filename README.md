@@ -20,6 +20,20 @@ Telling you (in order) that:
   * It's been 201 milliseconds since :begin
   * The new (current) trace keyword is :end
 
+## Performance notes
+
+It's good but not LMAX disruptor good. JVM warm-up can affect the timings so don't do anything silly. Using something like Hugo Duncan's criterium before tracing wouldn't be the worst idea.
+
+That aside, this is more of a production and staging tracing library than a super precise benchmarking thing.
+
+## Future plans
+
+Distributed repeaters and aggregators (Riemann, Kafka, Zipkin, Scribe, Hadoop, statsd)
+
+Auto-decorator macro magic for tracing the contents of functions.
+
+Multi-dimensional tracing.
+
 ## License
 
 Copyright © 2013 Chris Allen

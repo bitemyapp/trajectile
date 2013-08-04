@@ -36,6 +36,6 @@
         ;; _ (println "updated was: " updated)
         since (:since updated)
         last-kw (:last-kw updated)]
-    (timbre/trace (str "Last trace - " last-kw " Time since - " since " New trace - " new-kw))
+    (timbre/trace (str "Last trace - " last-kw " Millis since - " since " New trace - " new-kw))
     ;; (println "post-timbre" (are-you-fucking-serious) "\n")
     since))

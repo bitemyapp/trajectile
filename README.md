@@ -19,7 +19,7 @@ It'll log the interval between :begin and :end using Timbre.
 
 Should look something like:
 
-    2013-Aug-03 21:29:53 -0700 lamia TRACE [trajectile.core] - Last trace - :begin Time since - 201 New trace - :end
+    2013-Aug-03 21:29:53 -0700 lamia TRACE [trajectile.core] - Last trace - :begin Millis since - 201 New trace - :end
 
 Telling you (in order) that:
   * The last trace keyword was :begin

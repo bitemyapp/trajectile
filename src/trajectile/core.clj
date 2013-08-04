@@ -8,26 +8,34 @@
 (def time-keeper
   (atom {:time nil
          :kw nil
-         :since nil}))
+         :since nil
+         :last-kw nil}))
 
-(defn loosey-goosey-interval [earlier later]
-  " No fucks given. GIGO. "
+(defn maybe-interval [earlier later]
+  " It's Clojure guys. GIGO. "
   (if (and earlier later)
     (time/in-msecs (time/interval earlier later))
     nil))
 
+(defn are-you-fucking-serious []
+  (time/in-msecs (time/interval (time/epoch) (time/now))))
+
 (defn update-time [current new-kw]
   " Mixing time and atoms. SO BRAVE. "
   (let [last-time (:time current)
-        last-kw (:kw last)
+        last-kw (:kw current)
         new-time (time/now)
-        since (loosey-goosey-interval last-time new-time)]
-    (assoc current :time new-time :kw new-kw :since since)))
+        since (maybe-interval last-time new-time)]
+    (assoc current :time new-time :kw new-kw :since since :last-kw last-kw)))
 
 (defn trace [new-kw]
   " Trace-away! "
-  (let [last-kw (:kw @time-keeper)
-        updated (swap! time-keeper update-time new-kw)
-        since (:since updated)]
+  ;; (println "pre-let" (are-you-fucking-serious))
+  (let [updated (swap! time-keeper update-time new-kw)
+        ;; _ (println "post-update" (are-you-fucking-serious)) ;; I'm leaving these in.
+        ;; _ (println "updated was: " updated)
+        since (:since updated)
+        last-kw (:last-kw updated)]
     (timbre/trace (str "Last trace - " last-kw " Time since - " since " New trace - " new-kw))
+    ;; (println "post-timbre" (are-you-fucking-serious) "\n")
     since))

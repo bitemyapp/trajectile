@@ -38,6 +38,8 @@ That aside, this is more of a production and staging tracing library than a supe
 
 ## Future plans
 
+Capture actual trace location properly instead of seeing [trajectile.core] all over the place.
+
 Distributed repeaters and aggregators (Riemann, Kafka, Zipkin, Scribe, Hadoop, statsd)
 
 Auto-decorator macro magic for tracing the contents of functions.

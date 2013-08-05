@@ -26,16 +26,16 @@
         last-kw (:kw current)
         new-time (time/now)
         since (maybe-interval last-time new-time)]
-    (assoc current :time new-time :kw new-kw :since since :last-kw last-kw)))
+    (assoc current
+      :time new-time :kw new-kw
+      :since since :last-kw last-kw)))
 
 (defn trace [new-kw]
   " Trace-away! "
-  ;; (println "pre-let" (are-you-fucking-serious))
   (let [updated (swap! time-keeper update-time new-kw)
-        ;; _ (println "post-update" (are-you-fucking-serious)) ;; I'm leaving these in.
-        ;; _ (println "updated was: " updated)
         since (:since updated)
         last-kw (:last-kw updated)]
-    (timbre/trace (str "Last trace - " last-kw " Millis since - " since " New trace - " new-kw))
-    ;; (println "post-timbre" (are-you-fucking-serious) "\n")
+    (timbre/trace (str "Last trace - " last-kw
+                       " Millis since - " since
+                       " New trace - " new-kw))
     since))

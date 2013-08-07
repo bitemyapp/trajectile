@@ -6,7 +6,7 @@ Clojure tracing library, lets you detect hotspots without necessarily having to 
 
 In your project.clj:
 
-    [trajectile "0.0.2"]
+    [trajectile "0.0.3"]
 
 Example code:
 
